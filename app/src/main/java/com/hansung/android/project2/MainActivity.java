@@ -4,6 +4,8 @@ import android.Manifest;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Environment;
@@ -11,6 +13,7 @@ import android.provider.MediaStore;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.content.FileProvider;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -39,6 +42,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
+    public void OnClickButton(View v) {
+
+        Intent intent = new Intent(this, SecondActivity.class);
+        startActivity(intent);
+    }
+
     private String currentDateFormat(){
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMdd_HH_mm_ss");
         String  currentTimeStamp = dateFormat.format(new Date());
