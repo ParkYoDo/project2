@@ -12,6 +12,7 @@ import android.support.v4.content.ContextCompat;
 import android.support.v4.content.FileProvider;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -28,6 +29,13 @@ public class ThirdActivity extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_third);
+
+        ImageButton imagebutton = (ImageButton) findViewById(R.id.imagebutton2);
+        imagebutton.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View view) {
+                dispatchTakePictureIntent();
+            }
+        });
     }
     public void OnClickButton(View v) {
 
@@ -70,7 +78,7 @@ public class ThirdActivity extends AppCompatActivity{
             if (mPhotoFileName != null) {
                 mPhotoFile = new File(getExternalFilesDir(Environment.DIRECTORY_PICTURES), mPhotoFileName);
                 Uri uri = Uri.fromFile(mPhotoFile);
-                ImageView imageView = (ImageView) findViewById(R.id.imageView);
+                ImageView imageView = (ImageView) findViewById(R.id.imageView2);
                 imageView.setImageURI(uri);
             } else
                 Toast.makeText(getApplicationContext(), "mPhotoFile is null", Toast.LENGTH_SHORT).show();
