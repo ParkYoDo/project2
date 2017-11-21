@@ -94,4 +94,18 @@
         android:onClick="OnClickButton"
         android:text="맛집 등록" />
 
+    <Button
+        android:id="@+id/register"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="OnClickButton"
+        android:text="맛집 제거" />
+
+    <Button
+        android:id="@+id/register"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="OnClickButton"
+        android:text="맛집 업데이트" />
+
 </LinearLayout>

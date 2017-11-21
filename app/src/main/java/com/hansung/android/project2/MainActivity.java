@@ -159,6 +159,7 @@ class DBHelper extends SQLiteOpenHelper {
                     UserContract.Users._ID,
                     UserContract.Users.KEY_NAME,
                     UserContract.Users.KEY_PHONE,
+
                     name,
                     phone);
 

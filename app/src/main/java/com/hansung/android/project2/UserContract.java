@@ -13,8 +13,6 @@ public final class UserContract {
     public static final int DATABASE_VERSION = 1;
     private static final String TEXT_TYPE = " TEXT";
     private static final String COMMA_SEP = ",";
-    // To prevent someone from accidentally instantiating the contract class,
-    // make the constructor private.
     private UserContract() {}
 
     /* Inner class that defines the table contents */
