@@ -1,3 +1,5 @@
+package com.hansung.android.project2;
+
 import android.provider.BaseColumns;
 
 /**
@@ -5,6 +7,8 @@ import android.provider.BaseColumns;
  */
 
 public final class UserContract {
+
+
     public static final String DB_NAME="user.db";
     public static final int DATABASE_VERSION = 1;
     private static final String TEXT_TYPE = " TEXT";

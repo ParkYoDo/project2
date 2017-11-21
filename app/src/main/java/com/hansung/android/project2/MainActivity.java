@@ -30,6 +30,13 @@ import android.widget.ImageView;
 import android.widget.MediaController;
 import android.widget.Toast;
 import android.widget.VideoView;
+import android.content.ContentValues;
+import android.content.Context;
+import android.database.Cursor;
+import android.database.SQLException;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 import java.io.File;
 import java.text.SimpleDateFormat;
@@ -119,33 +126,9 @@ public class MainActivity extends AppCompatActivity {
 }
 
 
-public final class UserContract {
 
 
-    public static final String DB_NAME="user.db";
-    public static final int DATABASE_VERSION = 1;
-    private static final String TEXT_TYPE = " TEXT";
-    private static final String COMMA_SEP = ",";
-    // To prevent someone from accidentally instantiating the contract class,
-    // make the constructor private.
-    private UserContract() {}
-
-    /* Inner class that defines the table contents */
-    public static class Users implements BaseColumns {
-        public static final String TABLE_NAME="Users";
-        public static final String KEY_NAME = "Name";
-        public static final String KEY_PHONE = "Phone";
-
-        public static final String CREATE_TABLE = "CREATE TABLE " + TABLE_NAME + " (" +
-                _ID + " INTEGER PRIMARY KEY" + COMMA_SEP +
-                KEY_NAME + TEXT_TYPE + COMMA_SEP +
-                KEY_PHONE + TEXT_TYPE +  " )";
-        public static final String DELETE_TABLE = "DROP TABLE IF EXISTS " + TABLE_NAME;
-    }
-}
-
-
-public class DBHelper extends SQLiteOpenHelper {
+class DBHelper extends SQLiteOpenHelper {
 
 
     final static String TAG="SQLiteDBTest";
